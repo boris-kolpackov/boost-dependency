@@ -1,0 +1,6 @@
+$out_root/
+{
+  include component-core-intf/
+}
+
+export $out_root/component-core-intf/$import.target

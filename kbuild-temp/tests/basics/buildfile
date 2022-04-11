@@ -1,0 +1,3 @@
+import libs = kbuild-temp%lib{kbuild-temp}
+
+exe{driver}: {hxx ixx txx cxx}{**} $libs testscript{**}

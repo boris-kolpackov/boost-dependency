@@ -1,0 +1,3 @@
+# kbuild-temp
+
+C++ library

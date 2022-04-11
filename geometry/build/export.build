@@ -1,0 +1,6 @@
+$out_root/
+{
+  include geometry/
+}
+
+export $out_root/geometry/$import.target

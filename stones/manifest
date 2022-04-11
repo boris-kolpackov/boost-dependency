@@ -1,0 +1,16 @@
+: 1
+name: stones
+version: 0.1.0-a.0.z
+project: boost-dependency
+summary: stones C++ library
+license: other: proprietary ; Not free/open source.
+description-file: README.md
+url: https://example.org/boost-dependency
+email: boris@codesynthesis.com
+#build-error-email: boris@codesynthesis.com
+depends: * build2 >= 0.14.0
+depends: * bpkg >= 0.14.0
+depends: component-core-intf == $
+depends: assets == $
+depends: geometry == $
+depends: procgen-core == $

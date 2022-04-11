@@ -1,0 +1,7 @@
+project = component-core-intf
+
+using version
+using config
+using test
+using install
+using dist

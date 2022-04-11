@@ -1,0 +1,3 @@
+# procgen-core
+
+C++ library

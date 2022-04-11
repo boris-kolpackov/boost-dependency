@@ -1,0 +1,3 @@
+import libs = component-core-intf%lib{component-core-intf}
+
+exe{driver}: {hxx ixx txx cxx}{**} $libs testscript{**}

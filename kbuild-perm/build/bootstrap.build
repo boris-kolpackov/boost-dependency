@@ -1,0 +1,7 @@
+project = kbuild-perm
+
+using version
+using config
+using test
+using install
+using dist

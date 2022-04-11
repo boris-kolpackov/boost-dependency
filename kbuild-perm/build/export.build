@@ -1,0 +1,6 @@
+$out_root/
+{
+  include kbuild-perm/
+}
+
+export $out_root/kbuild-perm/$import.target

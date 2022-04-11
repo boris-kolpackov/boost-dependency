@@ -1,0 +1,3 @@
+import libs = assets%lib{assets}
+
+exe{driver}: {hxx ixx txx cxx}{**} $libs testscript{**}

@@ -1,0 +1,7 @@
+project = building-edit
+
+using version
+using config
+using test
+using install
+using dist

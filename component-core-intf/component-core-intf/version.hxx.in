@@ -1,0 +1,34 @@
+#pragma once
+
+// The numeric version format is AAAAABBBBBCCCCCDDDE where:
+//
+// AAAAA - major version number
+// BBBBB - minor version number
+// CCCCC - bugfix version number
+// DDD   - alpha / beta (DDD + 500) version number
+// E     - final (0) / snapshot (1)
+//
+// When DDDE is not 0, 1 is subtracted from AAAAABBBBBCCCCC. For example:
+//
+// Version      AAAAABBBBBCCCCCDDDE
+//
+// 0.1.0        0000000001000000000
+// 0.1.2        0000000001000020000
+// 1.2.3        0000100002000030000
+// 2.2.0-a.1    0000200001999990010
+// 3.0.0-b.2    0000299999999995020
+// 2.2.0-a.1.z  0000200001999990011
+//
+#define COMPONENT_CORE_INTF_VERSION       $component_core_intf.version.project_number$ULL
+#define COMPONENT_CORE_INTF_VERSION_STR   "$component_core_intf.version.project$"
+#define COMPONENT_CORE_INTF_VERSION_ID    "$component_core_intf.version.project_id$"
+#define COMPONENT_CORE_INTF_VERSION_FULL  "$component_core_intf.version$"
+
+#define COMPONENT_CORE_INTF_VERSION_MAJOR $component_core_intf.version.major$
+#define COMPONENT_CORE_INTF_VERSION_MINOR $component_core_intf.version.minor$
+#define COMPONENT_CORE_INTF_VERSION_PATCH $component_core_intf.version.patch$
+
+#define COMPONENT_CORE_INTF_PRE_RELEASE   $component_core_intf.version.pre_release$
+
+#define COMPONENT_CORE_INTF_SNAPSHOT_SN   $component_core_intf.version.snapshot_sn$ULL
+#define COMPONENT_CORE_INTF_SNAPSHOT_ID   "$component_core_intf.version.snapshot_id$"

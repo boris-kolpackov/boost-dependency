@@ -1,0 +1,58 @@
+intf_libs = # Interface dependencies.
+impl_libs = # Implementation dependencies.
+import intf_libs += libboost-graph%lib{boost_graph}
+import intf_libs += libboost-algorithm%lib{boost_algorithm}
+import intf_libs += libboost-bimap%lib{boost_bimap}
+import intf_libs += libboost-multi-index%lib{boost_multi_index}
+import intf_libs += libboost-geometry%lib{boost_geometry}
+
+
+lib{component-core-intf}: {hxx ixx txx cxx}{** -version} hxx{version} $impl_libs $intf_libs
+
+# Include the generated version header into the distribution (so that we don't
+# pick up an installed one) and don't remove it when cleaning in src (so that
+# clean results in a state identical to distributed).
+#
+hxx{version}: in{version} $src_root/manifest
+{
+  dist  = true
+  clean = ($src_root != $out_root)
+}
+
+hxx{export}@./: cxx.importable = false
+
+# Build options.
+#
+cxx.poptions =+ "-I$out_root" "-I$src_root"
+
+{hbmia obja}{*}: cxx.poptions += -DCOMPONENT_CORE_INTF_STATIC_BUILD
+{hbmis objs}{*}: cxx.poptions += -DCOMPONENT_CORE_INTF_SHARED_BUILD
+
+# Export options.
+#
+lib{component-core-intf}:
+{
+  cxx.export.poptions = "-I$out_root" "-I$src_root"
+  cxx.export.libs = $intf_libs
+}
+
+liba{component-core-intf}: cxx.export.poptions += -DCOMPONENT_CORE_INTF_STATIC
+libs{component-core-intf}: cxx.export.poptions += -DCOMPONENT_CORE_INTF_SHARED
+
+# For pre-releases use the complete version to make sure they cannot be used
+# in place of another pre-release or the final version. See the version module
+# for details on the version.* variable values.
+#
+if $version.pre_release
+  lib{component-core-intf}: bin.lib.version = "-$version.project_id"
+else
+  lib{component-core-intf}: bin.lib.version = "-$version.major.$version.minor"
+
+# Install into the component-core-intf/ subdirectory of, say, /usr/include/
+# recreating subdirectories.
+#
+{hxx ixx txx}{*}:
+{
+  install         = include/component-core-intf/
+  install.subdirs = true
+}

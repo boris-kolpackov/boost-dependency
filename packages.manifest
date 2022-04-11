@@ -1,0 +1,18 @@
+: 1
+location: component-core-intf/
+:
+location: geometry/
+:
+location: assets/
+:
+location: transactions/
+:
+location: stones/
+:
+location: kbuild-temp/
+:
+location: building-edit/
+:
+location: procgen-core/
+:
+location: kbuild-perm/

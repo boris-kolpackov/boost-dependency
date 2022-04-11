@@ -1,0 +1,5 @@
+building-edit
+
+# Testscript output directory (can be symlink).
+#
+test-building-edit

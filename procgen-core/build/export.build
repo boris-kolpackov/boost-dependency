@@ -1,0 +1,6 @@
+$out_root/
+{
+  include procgen-core/
+}
+
+export $out_root/procgen-core/$import.target

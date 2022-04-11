@@ -1,0 +1,9 @@
+libs =
+import libs += component-core-intf%lib{component-core-intf}
+import libs += geometry%lib{geometry}
+import libs += kbuild-temp%lib{kbuild-temp}
+import libs += kbuild-perm%lib{kbuild-perm}
+
+exe{building-edit}: {hxx ixx txx cxx}{**} $libs testscript
+
+cxx.poptions =+ "-I$out_root" "-I$src_root"

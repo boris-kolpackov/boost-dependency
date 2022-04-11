@@ -1,0 +1,34 @@
+#pragma once
+
+// The numeric version format is AAAAABBBBBCCCCCDDDE where:
+//
+// AAAAA - major version number
+// BBBBB - minor version number
+// CCCCC - bugfix version number
+// DDD   - alpha / beta (DDD + 500) version number
+// E     - final (0) / snapshot (1)
+//
+// When DDDE is not 0, 1 is subtracted from AAAAABBBBBCCCCC. For example:
+//
+// Version      AAAAABBBBBCCCCCDDDE
+//
+// 0.1.0        0000000001000000000
+// 0.1.2        0000000001000020000
+// 1.2.3        0000100002000030000
+// 2.2.0-a.1    0000200001999990010
+// 3.0.0-b.2    0000299999999995020
+// 2.2.0-a.1.z  0000200001999990011
+//
+#define KBUILD_TEMP_VERSION       $kbuild_temp.version.project_number$ULL
+#define KBUILD_TEMP_VERSION_STR   "$kbuild_temp.version.project$"
+#define KBUILD_TEMP_VERSION_ID    "$kbuild_temp.version.project_id$"
+#define KBUILD_TEMP_VERSION_FULL  "$kbuild_temp.version$"
+
+#define KBUILD_TEMP_VERSION_MAJOR $kbuild_temp.version.major$
+#define KBUILD_TEMP_VERSION_MINOR $kbuild_temp.version.minor$
+#define KBUILD_TEMP_VERSION_PATCH $kbuild_temp.version.patch$
+
+#define KBUILD_TEMP_PRE_RELEASE   $kbuild_temp.version.pre_release$
+
+#define KBUILD_TEMP_SNAPSHOT_SN   $kbuild_temp.version.snapshot_sn$ULL
+#define KBUILD_TEMP_SNAPSHOT_ID   "$kbuild_temp.version.snapshot_id$"

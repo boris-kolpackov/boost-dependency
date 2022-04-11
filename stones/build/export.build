@@ -1,0 +1,6 @@
+$out_root/
+{
+  include stones/
+}
+
+export $out_root/stones/$import.target

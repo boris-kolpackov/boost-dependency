@@ -1,0 +1,6 @@
+$out_root/
+{
+  include transactions/
+}
+
+export $out_root/transactions/$import.target

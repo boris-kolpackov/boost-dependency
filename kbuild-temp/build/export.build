@@ -1,0 +1,6 @@
+$out_root/
+{
+  include kbuild-temp/
+}
+
+export $out_root/kbuild-temp/$import.target
