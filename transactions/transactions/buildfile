@@ -3,6 +3,8 @@ impl_libs = # Implementation dependencies.
 import intf_libs += libboost-variant%lib{boost_variant}
 import intf_libs += component-core-intf%lib{component-core-intf}
 
+intf_libs = $cxx.deduplicate_export_libs($intf_libs)
+
 lib{transactions}: {hxx ixx txx cxx}{** -version} hxx{version} $impl_libs $intf_libs
 
 # Include the generated version header into the distribution (so that we don't

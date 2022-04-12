@@ -7,6 +7,8 @@ import intf_libs += stones%lib{stones}
 import intf_libs += procgen-core%lib{procgen-core}
 import intf_libs += transactions%lib{transactions}
 
+intf_libs = $cxx.deduplicate_export_libs($intf_libs)
+
 lib{kbuild-temp}: {hxx ixx txx cxx}{** -version} hxx{version} $impl_libs $intf_libs
 
 # Include the generated version header into the distribution (so that we don't
