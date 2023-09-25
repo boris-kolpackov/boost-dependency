@@ -10,8 +10,8 @@ email: boris@codesynthesis.com
 #build-error-email: boris@codesynthesis.com
 depends: * build2 >= 0.14.0
 depends: * bpkg >= 0.14.0
-depends: libboost-graph ^1.78.0
-depends: libboost-algorithm ^1.78.0
-depends: libboost-bimap ^1.78.0
-depends: libboost-multi-index ^1.78.0
-depends: libboost-geometry ^1.78.0
+depends: libboost-graph ~1.78.0
+depends: libboost-algorithm ~1.78.0
+depends: libboost-bimap ~1.78.0
+depends: libboost-multi-index ~1.78.0
+depends: libboost-geometry ~1.78.0
