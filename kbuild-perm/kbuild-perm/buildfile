@@ -6,6 +6,7 @@ import intf_libs += geometry%lib{geometry}
 import intf_libs += stones%lib{stones}
 import intf_libs += procgen-core%lib{procgen-core}
 import intf_libs += transactions%lib{transactions}
+import intf_libs += libthrift%lib{thrift}
 
 lib{kbuild-perm}: {hxx ixx txx cxx}{** -version} hxx{version} $impl_libs $intf_libs
 

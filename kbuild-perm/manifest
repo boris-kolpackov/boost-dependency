@@ -16,3 +16,14 @@ depends: geometry == $
 depends: stones == $
 depends: procgen-core == $
 depends: transactions == $
+
+depends:
+\
+libthrift ^0.17.0
+{
+  require
+  {
+    config.libthrift.libevent = true
+  }
+}
+\
